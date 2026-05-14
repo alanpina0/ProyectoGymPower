@@ -33,30 +33,30 @@
             btvolver = new PictureBox();
             bminimizar = new Button();
             r1 = new Panel();
+            pictureBox1 = new PictureBox();
             label3 = new Label();
             r2 = new Panel();
+            pictureBox2 = new PictureBox();
             label2 = new Label();
             r3 = new Panel();
+            pictureBox4 = new PictureBox();
             label1 = new Label();
             r4 = new Panel();
+            pictureBox3 = new PictureBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btvolver).BeginInit();
             r1.SuspendLayout();
-            r2.SuspendLayout();
-            r3.SuspendLayout();
-            r4.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            r2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            r3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            r4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btcerrar
@@ -109,8 +109,18 @@
             r1.Name = "r1";
             r1.Size = new Size(215, 279);
             r1.TabIndex = 17;
+            r1.Click += r1_Click;
             r1.MouseEnter += r1_MouseEnter;
             r1.MouseLeave += r1_MouseLeave;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(43, 82);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(133, 136);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -133,8 +143,18 @@
             r2.Name = "r2";
             r2.Size = new Size(215, 279);
             r2.TabIndex = 18;
+            r2.Click += r2_Click;
             r2.MouseEnter += r2_MouseEnter;
             r2.MouseLeave += r2_MouseLeave;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(51, 82);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(131, 118);
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -154,12 +174,22 @@
             r3.BackColor = Color.YellowGreen;
             r3.Controls.Add(pictureBox4);
             r3.Controls.Add(label1);
-            r3.Location = new Point(865, 180);
+            r3.Location = new Point(634, 180);
             r3.Name = "r3";
             r3.Size = new Size(215, 279);
             r3.TabIndex = 19;
+            r3.Click += r3_Click;
             r3.MouseEnter += r3_MouseEnter;
             r3.MouseLeave += r3_MouseLeave;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(36, 82);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(150, 135);
+            pictureBox4.TabIndex = 1;
+            pictureBox4.TabStop = false;
             // 
             // label1
             // 
@@ -178,12 +208,22 @@
             r4.BackColor = Color.Gold;
             r4.Controls.Add(pictureBox3);
             r4.Controls.Add(label4);
-            r4.Location = new Point(614, 180);
+            r4.Location = new Point(894, 180);
             r4.Name = "r4";
             r4.Size = new Size(215, 279);
             r4.TabIndex = 20;
+            r4.Click += r4_Click;
             r4.MouseEnter += r4_MouseEnter;
             r4.MouseLeave += r4_MouseLeave;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(41, 82);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(150, 135);
+            pictureBox3.TabIndex = 3;
+            pictureBox3.TabStop = false;
             // 
             // label4
             // 
@@ -233,42 +273,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1183, 563);
             panel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(43, 82);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(133, 136);
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(51, 82);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(131, 118);
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(41, 82);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(150, 135);
-            pictureBox3.TabIndex = 3;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(36, 82);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(150, 135);
-            pictureBox4.TabIndex = 1;
-            pictureBox4.TabStop = false;
+            panel1.Paint += panel1_Paint;
             // 
             // pReportes
             // 
@@ -283,18 +288,18 @@
             ((System.ComponentModel.ISupportInitialize)btvolver).EndInit();
             r1.ResumeLayout(false);
             r1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             r2.ResumeLayout(false);
             r2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             r3.ResumeLayout(false);
             r3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             r4.ResumeLayout(false);
             r4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 

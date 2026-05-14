@@ -40,11 +40,61 @@ namespace view
 
             this.KeyPreview = true;
 
+
             SeleccionarPanel(0);
 
 
         }
 
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Flecha derecha
+            if (e.KeyCode == Keys.Right)
+            {
+                indiceSeleccionado++;
+
+                // Si pasa del último, vuelve al primero
+                if (indiceSeleccionado >= paneles.Length)
+                {
+                    indiceSeleccionado = 0;
+                }
+
+                SeleccionarPanel(indiceSeleccionado);
+            }
+
+            // Flecha izquierda
+            if (e.KeyCode == Keys.Left)
+            {
+                indiceSeleccionado--;
+
+                // Si baja de 0, va al último
+                if (indiceSeleccionado < 0)
+                {
+                    indiceSeleccionado = paneles.Length - 1;
+                }
+
+                SeleccionarPanel(indiceSeleccionado);
+            }
+
+            // ENTER para abrir el panel seleccionado
+            if (e.KeyCode == Keys.Enter)
+            {
+                switch (indiceSeleccionado)
+                {
+                    case 0:
+                        panel2_Click(panel2, EventArgs.Empty);
+                        break;
+
+                    case 1:
+                        panel3_MouseClick(panel3, null);
+                        break;
+
+                    case 2:
+                        panel4_MouseClick(panel4, null);
+                        break;
+                }
+            }
+        }
         private void SeleccionarPanel(int indice)
         {
             // Restaurar colores originales
@@ -177,6 +227,64 @@ namespace view
         private void panel4_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void pmain_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Flecha derecha
+            if (keyData == Keys.Right)
+            {
+                indiceSeleccionado++;
+
+                if (indiceSeleccionado >= paneles.Length)
+                {
+                    indiceSeleccionado = 0;
+                }
+
+                SeleccionarPanel(indiceSeleccionado);
+                return true;
+            }
+
+            // Flecha izquierda
+            if (keyData == Keys.Left)
+            {
+                indiceSeleccionado--;
+
+                if (indiceSeleccionado < 0)
+                {
+                    indiceSeleccionado = paneles.Length - 1;
+                }
+
+                SeleccionarPanel(indiceSeleccionado);
+                return true;
+            }
+
+            // ENTER
+            if (keyData == Keys.Enter)
+            {
+                switch (indiceSeleccionado)
+                {
+                    case 0:
+                        panel2_Click(panel2, EventArgs.Empty);
+                        break;
+
+                    case 1:
+                        panel3_MouseClick(panel3, null);
+                        break;
+
+                    case 2:
+                        panel4_MouseClick(panel4, null);
+                        break;
+                }
+
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

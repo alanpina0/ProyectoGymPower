@@ -150,8 +150,8 @@ namespace Form1
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(6F, 3F);
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1052, 607);
             Controls.Add(bminimizar);
             Controls.Add(btc);

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace view
 {
+
     public partial class pReportes : Form
     {
 
@@ -17,6 +18,9 @@ namespace view
         Color colorPanelr2;
         Color colorPanelr3;
         Color colorPanelr4;
+
+        Panel[] paneles;
+        int indiceSeleccionado = 0;
 
 
         public pReportes()
@@ -34,7 +38,88 @@ namespace view
             RedondearPanel(r3, 40);
             RedondearPanel(r4, 40);
 
+            paneles = new Panel[] { r1, r2, r3, r4 };
+            SeleccionarPanel(0);
+
         }
+
+
+        private void SeleccionarPanel(int indice)
+        {
+            // Restaurar colores originales
+            r1.BackColor = colorPanelr1;
+            r2.BackColor = colorPanelr2;
+            r3.BackColor = colorPanelr3;
+            r4.BackColor = colorPanelr4;
+
+            // Resaltar seleccionado
+            paneles[indice].BackColor = Color.White;
+        }
+
+
+
+        // CONTROL DE FLECHAS
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // DERECHA
+            if (keyData == Keys.Right)
+            {
+                indiceSeleccionado++;
+
+                if (indiceSeleccionado >= paneles.Length)
+                {
+                    indiceSeleccionado = 0;
+                }
+
+                SeleccionarPanel(indiceSeleccionado);
+                return true;
+            }
+
+            // IZQUIERDA
+            if (keyData == Keys.Left)
+            {
+                indiceSeleccionado--;
+
+                if (indiceSeleccionado < 0)
+                {
+                    indiceSeleccionado = paneles.Length - 1;
+                }
+
+                SeleccionarPanel(indiceSeleccionado);
+                return true;
+            }
+
+            // ENTER
+            if (keyData == Keys.Enter)
+            {
+                switch (indiceSeleccionado)
+                {
+                    case 0:
+                        r1_Click(r1, EventArgs.Empty);
+                        break;
+
+                    case 1:
+                        r2_Click(r2, EventArgs.Empty);
+                        break;
+
+                    case 2:
+                        r3_Click(r3, EventArgs.Empty);
+                        break;
+
+                    case 3:
+                        r4_Click(r4, EventArgs.Empty);
+                        break;
+                }
+
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
+
+
 
         private void btcerrar_Click(object sender, EventArgs e)
         {
@@ -122,6 +207,31 @@ namespace view
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void r1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void r2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void r4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void r3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

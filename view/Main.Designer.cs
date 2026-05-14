@@ -75,6 +75,7 @@
             pmain.Size = new Size(1200, 607);
             pmain.TabIndex = 0;
             pmain.Paint += panel1_Paint;
+            pmain.PreviewKeyDown += pmain_PreviewKeyDown;
             // 
             // panel1
             // 
