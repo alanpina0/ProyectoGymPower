@@ -1,5 +1,7 @@
 ﻿
-namespace Form1
+///using GIMNASIO.Modelos;
+///namespace GIMNASIO.Vistas
+namespace view
 {
     partial class Login
     {

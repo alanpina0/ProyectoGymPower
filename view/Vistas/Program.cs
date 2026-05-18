@@ -1,6 +1,6 @@
 using Form1;
 
-namespace view
+namespace view.Vistas
 {
     internal static class Program
     {

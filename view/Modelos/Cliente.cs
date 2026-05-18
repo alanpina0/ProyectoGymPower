@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Moodelo
+namespace GIMNASIO.Modelos
 {
     internal class Cliente
     {

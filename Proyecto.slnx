@@ -1,12 +1,5 @@
 <Solution>
-  <Folder Name="/Modelo/">
-    <File Path="Moodelo/Cliente.cs" />
-    <File Path="Moodelo/ClienteMembrsia.cs" />
-    <File Path="Moodelo/Membresia.cs" />
-    <File Path="Moodelo/Pago.cs" />
-    <Project Path="Moodelo/Moodelo.csproj" Id="06542eca-b5fe-4ee7-aa34-ccd78c8484ad" />
-  </Folder>
-  <Folder Name="/Vista/">
-    <Project Path="view/view.csproj" />
+  <Folder Name="/GymPower/">
+    <Project Path="view/GIMNASIO.csproj" />
   </Folder>
 </Solution>
