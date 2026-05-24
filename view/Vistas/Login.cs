@@ -1,5 +1,5 @@
 using view;
-///namespace Form1
+//namespace Form1
 
 ///using GIMNASIO.Modelos;
 namespace view

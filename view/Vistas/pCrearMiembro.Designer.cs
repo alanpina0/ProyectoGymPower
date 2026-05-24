@@ -168,6 +168,7 @@
             txtMembresia.ReadOnly = true;
             txtMembresia.Size = new Size(116, 33);
             txtMembresia.TabIndex = 45;
+            txtMembresia.TextChanged += txtMembresia_TextChanged;
             // 
             // label4
             // 

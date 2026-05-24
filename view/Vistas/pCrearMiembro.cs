@@ -9,6 +9,9 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+using GIMNASIO.DAO;
+using GIMNASIO.Modelos;
+
 
 namespace view
 {
@@ -183,6 +186,7 @@ namespace view
         {
             nombrebx.Text = "";
             apellidopbx.Text = "";
+            apellidombx.Text = "";
             txtFecha.Text = "";
             telefonobx.Text = ""; // teléfono
             txtCorreo.Text = "";
@@ -195,22 +199,46 @@ namespace view
         private void btnCrear_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nombrebx.Text) ||
-     string.IsNullOrWhiteSpace(apellidopbx.Text) ||
-     string.IsNullOrWhiteSpace(txtFecha.Text) ||
-     string.IsNullOrWhiteSpace(telefonobx.Text) ||
-     string.IsNullOrWhiteSpace(txtCorreo.Text) ||
-     string.IsNullOrWhiteSpace(txtMembresia.Text) ||
-     (!radioButton2.Checked && !radioButton1.Checked))
+        string.IsNullOrWhiteSpace(apellidopbx.Text) ||
+        string.IsNullOrWhiteSpace(txtFecha.Text) ||
+        string.IsNullOrWhiteSpace(telefonobx.Text) ||
+        string.IsNullOrWhiteSpace(txtCorreo.Text) ||
+        string.IsNullOrWhiteSpace(txtMembresia.Text) ||
+        (!radioButton2.Checked && !radioButton1.Checked))
             {
                 MessageBox.Show("Por favor, completa todos los campos");
                 return;
             }
 
-            // Si todo está correcto
-            MessageBox.Show("Miembro creado correctamente");
+            Cliente cliente = new Cliente();
+
+            cliente.Nombre = nombrebx.Text;
+            cliente.ApellidoPaterno = apellidopbx.Text;
+            cliente.ApellidoMaterno = apellidombx.Text;
+
+            cliente.Fechanacimiento = Convert.ToDateTime(txtFecha.Text);
+
+            cliente.Telefono = telefonobx.Text;
+
+            cliente.CorreoE = txtCorreo.Text;
+
+            cliente.sexo = radioButton1.Checked ? "Masculino" : "Femenino";
+
+            clienteDAO dao = new clienteDAO();
+
+            dao.Insertar(cliente);
+
+            MessageBox.Show("Cliente insertado");
+
             LimpiarCampos();
 
             btnCrear.Visible = false;
+            btnPagar.Visible = false;
+
+        }
+
+        private void txtMembresia_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
